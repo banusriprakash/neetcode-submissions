@@ -1,0 +1,19 @@
+class Solution:
+    def maxDifference(self, s: str) -> int:
+        
+        if not s:
+            return 0
+
+        mp={}
+
+        for ch in s:
+            mp[ch]=mp.get(ch,0)+1
+
+        s_m=set(sorted(mp.values(),key=lambda item:item,reverse=True))
+        print(s_m)
+        ls=list(s_m)
+        print(ls)
+
+        
+
+        return ls[len(ls)-1]-ls[len(ls)-2]
